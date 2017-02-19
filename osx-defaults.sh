@@ -36,14 +36,16 @@ defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
 
 dockutil --no-restart --remove all
-dockutil --no-restart --add "$HOME/Applications/Google Chrome.app"
-dockutil --no-restart --add "$HOME/Applications/Firefox.app"
 dockutil --no-restart --add "/Applications/Safari.app"
-dockutil --no-restart --add "/Applications/Mail.app"
-dockutil --no-restart --add "/Applications/Calendar.app"
-dockutil --no-restart --add "/Applications/Utilities/Terminal.app"
+dockutil --no-restart --add "/Applications/iTerm.app"
+dockutil --no-restart --add "/Applications/Textmate.app"
+dockutil --no-restart --add "/Applications/RStudio.app"
+dockutil --no-restart --add "/Applications/Spotify.app"
+dockutil --no-restart --add "/Applications/Cyberduck.app"
+dockutil --no-restart --add "/Applications/KeePassX.app"
 dockutil --no-restart --add "/Applications/System Preferences.app"
-dockutil --no-restart --add "/Applications/Utilities/Console.app"
-dockutil --no-restart --add "$HOME/Applications/Spotify.app"
+dockutil --no-restart --add "/Applications/Github Desktop.app"
+dockutil --no-restart --add "/Applications/CLion.app"
+dockutil --no-restart --add "/Applications/Slack.app"
 
 killall Dock
