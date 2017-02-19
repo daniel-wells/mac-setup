@@ -1,11 +1,5 @@
 #!/bin/sh
 
-# Finder - Allow text selection in Quick Look
-defaults write com.apple.finder QLEnableTextSelection -bool true
-
-# Stop iTunes from responding to the keyboard media keys
-launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
-
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
 
