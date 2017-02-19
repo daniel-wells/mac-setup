@@ -4,9 +4,9 @@ scutil --get ComputerName # friendly version
 scutil --get LocalHostName # no spaces etc.
 scutil --get HostName
 
-# sudo scutil --set ComputerName "dw-macbook"
-# sudo scutil --set HostName "dw-macbook"
-# sudo scutil --set LocalHostName "dw-macbook"
+# sudo scutil --set ComputerName "Wells-MacBook-Pro"
+# sudo scutil --set HostName "Wells-MacBook-Pro"
+# sudo scutil --set LocalHostName "Wells-MacBook-Pro"
 
 xcode-select --install
 
@@ -17,7 +17,7 @@ sh install-software.sh
 # after install dockutil
 sh osxdefaults.sh
 
-# install bash profile
+# Symlink bash profile
 ln -sfv "bash_profile.sh" ~/.bash_profile
 
 # Install Sublime Text settings

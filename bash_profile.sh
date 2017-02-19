@@ -1,3 +1,5 @@
+export PATH="/usr/local/bin:$PATH"
+
 # if bashrc has content, source it
 [[ -s ~/.bashrc ]] && . ~/.bashrc
 
