@@ -50,7 +50,9 @@ brew cask install \
 	firefox \
 	slack \
 	prey \
-	keepassx
+	keepassx \
+	keybase \
+	clion
 
 #	google-chrome \
 #	vlc \
