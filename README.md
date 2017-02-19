@@ -4,7 +4,7 @@ These are my ['dotfiles'](https://dotfiles.github.io) which specify the custom c
 [setup.sh](setup.sh) is the bootstrap script and it will do the following:
 
 1. Install xcode (select)
-2. Run [brew.sh](brew.sh) which installs all the utilities and programmes I use
+2. Run [install-software.sh](install-software.sh) which installs all the utilities and programmes I use
 3. Run [osx-defaults.sh](osx-defaults.sh) which configures system preferences such as dock location
 4. Install [bash_profile.sh](bash_profile.sh) as my terminal bash settings
 5. Setup my ssh/config (file not in this repo for security)

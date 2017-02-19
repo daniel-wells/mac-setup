@@ -1,10 +1,10 @@
 #!/bin/sh
 
 # Remove huge useless programmes
-sudo rm -rf /Applications/iTunes.app/		# 300MB
-sudo rm -rf /Applications/iMovie.app/		# 2.95GB
-sudo rm -rf /Applications/iPhoto.app/		# 1.7GB
-sudo rm -rf /Applications/GarageBand.app/	# 1.16GB
+# sudo rm -rf /Applications/iTunes.app/		# 300MB
+# sudo rm -rf /Applications/iMovie.app/		# 2.95GB
+# sudo rm -rf /Applications/iPhoto.app/		# 1.7GB
+# sudo rm -rf /Applications/GarageBand.app/	# 1.16GB
 
 # Install Homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -22,16 +22,17 @@ brew doctor
 
 brew tap homebrew/dupes
 brew install grep \
-	graphviz \
 	rsync \
 	wget \
 	dockutil \
 	git
 
+#	graphviz \
+
 brew install --with-x11 --with-openblas homebrew/science/r
 # alternatively 'brew cask install r'
 
-# install.packages(c("ggplot2","devtools","data.table","ggrepel","ggTimeSeries","httr","lubridate","RColorBrewer","scales"))
+# install.packages(c("ggplot2","devtools","data.table","ggrepel","ggTimeSeries","httr","lubridate","RColorBrewer","scales","ggforce","NMF","rmarkdown"))
 
 brew tap caskroom/cask
 
@@ -43,20 +44,23 @@ brew cask install \
 	cyberduck \
 	github-desktop \
 	rstudio \
-	evernote \
-	megasync \
 	dropbox \
 	gopro \
 	gopro-studio \
-	skype \
-	tunnelblick \
 	firefox \
-	google-chrome \
-	vlc \
-	keybase \
+	slack \
 	prey \
-	virtualbox \
-	sublime-text
+	keepassx
+
+#	google-chrome \
+#	vlc \
+#	skype \
+#	virtualbox \
+#	sublime-text
+#	keybase \
+#	tunnelblick \
+#	evernote \
+#	megasync \
 
 brew cask install betterzipql #peak inside zips
 brew cask install quicklook-csv #tsv files
