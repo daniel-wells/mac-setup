@@ -20,56 +20,36 @@ brew doctor
 # brew upgrade # update outdated packages
 # brew cleanup # brew keeps all old versions
 
-brew tap homebrew/dupes
 brew install grep \
 	rsync \
 	wget \
 	dockutil \
 	git
 
-#	graphviz \
-
-brew install --with-x11 --with-openblas homebrew/science/r
-# alternatively 'brew cask install r'
-
-# install.packages(c("ggplot2","devtools","data.table","ggrepel","ggTimeSeries","httr","lubridate","RColorBrewer","scales","ggforce","NMF","rmarkdown"))
 
 brew tap caskroom/cask
 
 brew cask install \
 	textmate \
 	iterm2 \
-	spotify \
-	spectacle \
+	r \
 	cyberduck \
-	github-desktop \
+	github \
 	rstudio \
 	dropbox \
-	gopro \
-	gopro-studio \
+	box-drive \
 	firefox \
 	slack \
 	prey \
-	keepassx \
-	keybase \
-	clion
-
-#	google-chrome \
-#	vlc \
-#	skype \
-#	virtualbox \
-#	sublime-text
-#	keybase \
-#	tunnelblick \
-#	evernote \
-#	megasync \
-
-brew cask install betterzipql #peak inside zips
-brew cask install quicklook-csv #tsv files
-brew cask install qlstephen #look at files without extensions
-
-# Other Applications
-# KeyPassX
-# Snapgene
-# MacPyMolEdu
-# GIMP
+	keepassxc \
+	google-chrome \
+	skype \
+	lastfm \
+	docker \
+	igv \
+	texstudio \
+	tunnelbear \
+	mactex \
+	betterzipql \
+	quicklook-csv \
+	qlstephen
