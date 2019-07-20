@@ -5,6 +5,8 @@ export PATH="/usr/local/bin:$PATH"
 
 alias ls="ls -GFh"
 
+set -o vi
+
 # Tell grep to highlight matches
 alias grep='grep --color=auto'
 
