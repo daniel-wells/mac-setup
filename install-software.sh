@@ -24,7 +24,9 @@ brew install grep \
 	rsync \
 	wget \
 	dockutil \
-	git
+	git \
+	fd \
+	fzf
 
 
 brew tap caskroom/cask
