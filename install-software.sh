@@ -26,7 +26,8 @@ brew install grep \
 	dockutil \
 	git \
 	fd \
-	fzf
+	fzf \
+	ripgrep
 
 /usr/local/opt/fzf/install
 
