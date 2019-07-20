@@ -1,3 +1,5 @@
+# ln -sf ~/Dropbox/Github/mac-setup/bash_profile.sh ~/.bash_profile
+
 export PATH="/usr/local/bin:$PATH"
 
 # if bashrc has content, source it
