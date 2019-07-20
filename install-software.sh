@@ -33,6 +33,8 @@ brew cask install \
 	textmate \
 	iterm2 \
 	r \
+	xquartz \
+	anaconda \
 	cyberduck \
 	github \
 	rstudio \
