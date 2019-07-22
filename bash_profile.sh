@@ -9,6 +9,10 @@ alias ls="ls -GFh"
 
 set -o vi
 
+export FZF_DEFAULT_COMMAND="fd . --follow $HOME"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+echo Library >> ~/.fdignore
+
 # Tell grep to highlight matches
 alias grep='grep --color=auto'
 

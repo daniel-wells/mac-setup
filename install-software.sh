@@ -31,10 +31,6 @@ brew install grep \
 
 /usr/local/opt/fzf/install
 
-export FZF_DEFAULT_COMMAND="fd . --follow $HOME"
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-echo Library >> ~/.fdignore
-
 brew tap caskroom/cask
 
 brew cask install \
