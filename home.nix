@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   # Ensure this matches your macOS username
@@ -46,7 +46,11 @@
     ".tmux.conf".source = ./tmux.conf;
   };
 
-  home.file.".ssh".source = ./ssh;
+  home.activation.linkDropboxSsh = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    if [ ! -e "$HOME/.ssh" ]; then
+      ln -sfv "$HOME/Dropbox/Github/mac-setup/ssh" "$HOME/.ssh"
+    fi
+  '';
 
   home.sessionVariables = {
     FZF_DEFAULT_COMMAND = "fd . --follow $HOME";
