@@ -45,9 +45,10 @@
       system.primaryUser = "${user}";
       system.defaults = {
           NSGlobalDomain.NSAutomaticQuoteSubstitutionEnabled = false;
+          NSGlobalDomain.NSAutomaticDashSubstitutionEnabled = false;
           finder.AppleShowAllExtensions = true;
           finder.ShowPathbar = true;
-          #screencapture.location = "~/Pictures/screenshots";
+          screencapture.location = "~/Google_Drive/Screenshots";
       };
 
     system.defaults.dock = {
@@ -72,14 +73,7 @@
     ];
   };
 
-      # Crucial step: Trigger a Dock refresh when configuration changes
-      #system.activationScripts.postUserActivation.text = ''
-      # /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder &
-      # killall Dock
-      #'';
-
-      # Enable alternative shell support in nix-darwin.
-      # programs.fish.enable = true;
+      security.pam.services.sudo_local.touchIdAuth = true;
 
       # Set Git commit hash for darwin-version.
       system.configurationRevision = self.rev or self.dirtyRev or null;

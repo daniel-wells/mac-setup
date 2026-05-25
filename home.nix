@@ -16,6 +16,7 @@
     htop
     tmux
     restic
+    autorestic
     gnupg
     pinentry_mac
   ];
@@ -44,15 +45,20 @@
      };
   };
 
+  services.gpg-agent = {
+    enable = true;
+    pinentry.package = pkgs.pinentry_mac; 
+    defaultCacheTtl = 28800;
+    maxCacheTtl = 86400;
+  };
+
   programs.gpg = {
     enable = true;
   };
 
-  home.file."gnupg/gpg-agent.conf".text = ''
-    pinentry-program ${pkgs.pinentry_mac}/bin/pinentry-mac
-    default-cache-ttl 60000
-    max-cache-ttl 72000
-    '';
+  #home.file."gnupg/gpg-agent.conf".text = ''
+    #pinentry-program ${pkgs.pinentry_mac}/bin/pinentry-mac
+   # '';
 
   programs.zsh.initExtra = ''
     export GPG_TTY=$(tty)
