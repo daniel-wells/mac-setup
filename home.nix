@@ -43,7 +43,10 @@
     '';
 
     ".autorestic.yaml".source = ./autorestic.yaml;
+    ".tmux.conf".source = ./tmux.conf;
   };
+
+  home.file.".ssh".source = ./ssh;
 
   home.sessionVariables = {
     FZF_DEFAULT_COMMAND = "fd . --follow $HOME";
