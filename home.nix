@@ -13,6 +13,10 @@
   # Packages you want to install specifically for your user
   home.packages = with pkgs; [
     ripgrep
+    fd
+    fzf
+    wget
+    git
     htop
     tmux
     restic
@@ -29,6 +33,22 @@
     #     name = My Name
     #     email = myemail@example.com
     # '';
+    ".fdignore".text = ''
+      Library/Caches
+      Library/Logs
+      Library/Developer
+      Library/Application Support
+      Library/Containers
+      Library/Mail
+    '';
+  };
+
+  home.sessionVariables = {
+    FZF_DEFAULT_COMMAND = "fd . --follow $HOME";
+    FZF_CTRL_T_COMMAND = "$FZF_DEFAULT_COMMAND";
+    HISTSIZE = "32768";
+    HISTFILESIZE = "$HISTSIZE";
+    HISTCONTROL = "ignoreboth";
   };
 
   # Let Home Manager manage itself and specific software environments
@@ -56,12 +76,46 @@
     enable = true;
   };
 
+  programs.zsh = {
+    enable = true;
+    shellAliases = {
+      ls = "ls -GFh";
+      grep = "grep --color=auto";
+      mergepdf = "/System/Library/Automator/Combine\\ PDF\\ Pages.action/Contents/Resources/join.py";
+    };
+    initContent = ''
+      export GPG_TTY=$(tty)
+    '';
+  };
+
   #home.file."gnupg/gpg-agent.conf".text = ''
     #pinentry-program ${pkgs.pinentry_mac}/bin/pinentry-mac
    # '';
 
-  programs.zsh.initExtra = ''
-    export GPG_TTY=$(tty)
- '';
+ programs.vim = {
+  enable = true;
+  extraConfig = ''
+    set diffopt+=internal,algorithm:patience
+    set backspace=indent,eol,start
+    set relativenumber
+    syntax on
+
+    set cursorline
+    set showmatch
+    set incsearch
+    set hlsearch
+    inoremap jk <esc>`^
+    inoremap kj <esc>`^
+
+    set ruler
+    set tabstop=4
+    set softtabstop=4
+    set shiftwidth=4
+    set expandtab
+    set list
+    set autoindent
+    set smartindent
+  '';
+};
 
 }
