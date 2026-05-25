@@ -1,0 +1,104 @@
+backends:
+  b2:
+    type: b2
+    path: nd83bgf83nj0
+    requirekey: true
+    options:
+      all:
+        password-command: 'security find-generic-password -s "restic-repo-b2" -w'
+  hdd:
+    type: local
+    path: /Volumes/Back-Up/restic-repo
+    requirekey: true
+    options:
+      all:
+        password-command: 'security find-generic-password -s "restic-repo-hdd" -w'
+  ssd:
+    type: local
+    path: /Volumes/samsung_t7/restic-repo
+    requirekey: true
+    options:
+      all:
+        password-command: 'security find-generic-password -s "restic-repo-ssd" -w'
+
+extras:
+  env:
+    restic_progress_fps: 0.02
+
+global:
+  backup:
+    exclude:
+    - '*.DS_Store'
+    - '*.ini'
+    host: MBP_2026
+    verbose: true
+    group-by: paths
+
+locations:
+  archive1:
+    from:
+    - archive1
+    to:
+    - hdd
+    - b2
+    - ssd
+
+  archive2:
+    from:
+    - archive2
+    to:
+    - hdd
+    - ssd
+
+  dropbox:
+    from:
+    - /Users/d.wells/Library/CloudStorage/Dropbox
+    to:
+    - hdd
+    - b2
+    - ssd
+
+  google_drive:
+    from:
+    - Google_Drive
+    to:
+    - hdd
+    - b2
+    - ssd
+
+  gopro:
+    from:
+    - GoPro
+    to:
+    - hdd
+    - b2
+    - ssd
+
+# deleted from local for space
+# untitled:
+#   from:
+#   - untitled
+#   to:
+#   - hdd
+
+  wells_desktop_files:
+    from:
+    - wells_desktop_files
+    to:
+    - hdd
+    - b2
+    - ssd
+
+  pictures:
+    from:
+    - Pictures
+    to:
+    - ssd
+
+  zotero:
+    from:
+    - Zotero
+    to:
+    - ssd
+
+version: 2

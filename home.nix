@@ -41,6 +41,8 @@
       Library/Containers
       Library/Mail
     '';
+
+    ".autorestic.yaml".source = ./autorestic.yaml;
   };
 
   home.sessionVariables = {
