@@ -46,6 +46,7 @@
       system.defaults = {
           NSGlobalDomain.NSAutomaticQuoteSubstitutionEnabled = false;
           NSGlobalDomain.NSAutomaticDashSubstitutionEnabled = false;
+          ".GlobalPreferences"."com.apple.mouse.scaling" = 3.0;
           finder.AppleShowAllExtensions = true;
           finder.ShowPathbar = true;
           screencapture.location = "~/Google_Drive/Screenshots";
